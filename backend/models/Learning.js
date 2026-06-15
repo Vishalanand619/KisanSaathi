@@ -1,4 +1,3 @@
-// KisanSaathi - Learning Resource Model
 const mongoose = require('mongoose');
 
 const learningSchema = new mongoose.Schema(
