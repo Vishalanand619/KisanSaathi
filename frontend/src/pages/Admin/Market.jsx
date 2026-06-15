@@ -1,4 +1,3 @@
-// KisanSaathi — Admin Market Price Management
 import React, { useEffect, useState } from 'react';
 import api from '../../api/axios';
 import toast from 'react-hot-toast';
