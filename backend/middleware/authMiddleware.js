@@ -1,8 +1,7 @@
-// KisanSaathi - Auth Middleware
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-// Protect routes - verify JWT
+
 const protect = async (req, res, next) => {
   let token;
 
@@ -25,7 +24,7 @@ const protect = async (req, res, next) => {
   }
 };
 
-// Restrict to admin role
+
 const adminOnly = (req, res, next) => {
   if (req.user && req.user.role === 'admin') {
     next();
@@ -34,7 +33,7 @@ const adminOnly = (req, res, next) => {
   }
 };
 
-// Restrict to farmer role
+
 const farmerOnly = (req, res, next) => {
   if (req.user && req.user.role === 'farmer') {
     next();
