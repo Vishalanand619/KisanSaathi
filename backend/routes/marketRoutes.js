@@ -1,4 +1,3 @@
-// KisanSaathi — Market Routes
 const express = require('express');
 const router = express.Router();
 const { getMarketPrices, getStates, getCrops, triggerSync, addMarketPrice, deleteMarketPrice } = require('../controllers/marketController');
