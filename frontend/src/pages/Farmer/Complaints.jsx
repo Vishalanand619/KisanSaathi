@@ -1,4 +1,3 @@
-// KisanSaathi — Farmer Complaints Page (Full Ticket System)
 import React, { useEffect, useState } from 'react';
 import api from '../../api/axios';
 import toast from 'react-hot-toast';
@@ -52,7 +51,7 @@ export default function FarmerComplaints() {
         </button>
       </div>
 
-      {/* New Complaint Form */}
+      
       {showForm && (
         <div className="card" style={{ marginBottom:24, borderLeft:'4px solid var(--accent)' }}>
           <h3 style={{ fontWeight:700, color:'var(--primary-dark)', marginBottom:20 }}>📝 File New Complaint</h3>
@@ -97,7 +96,7 @@ export default function FarmerComplaints() {
         </div>
       )}
 
-      {/* Stats */}
+      
       {complaints.length > 0 && (
         <div className="grid-4" style={{ marginBottom:20 }}>
           {[
@@ -114,7 +113,7 @@ export default function FarmerComplaints() {
         </div>
       )}
 
-      {/* Complaints List */}
+      
       {complaints.length === 0 ? (
         <div className="empty-state"><div className="empty-icon">📝</div><p>No complaints filed yet</p><button className="btn btn-primary" style={{ marginTop:16 }} onClick={() => setShowForm(true)}>+ File First Complaint</button></div>
       ) : (
@@ -143,7 +142,7 @@ export default function FarmerComplaints() {
                 </div>
               </div>
 
-              {/* Expanded detail */}
+              
               {selected?._id === c._id && (
                 <div style={{ marginTop:18, paddingTop:18, borderTop:'1px solid var(--border)' }} onClick={e => e.stopPropagation()}>
                   <div className="form-group">
@@ -151,7 +150,7 @@ export default function FarmerComplaints() {
                     <div style={{ background:'var(--bg)', padding:'12px 16px', borderRadius:8, fontSize:14, lineHeight:1.7 }}>{c.description}</div>
                   </div>
 
-                  {/* Timeline */}
+                  
                   {c.timeline?.length > 0 && (
                     <div style={{ marginTop:16 }}>
                       <div style={{ fontWeight:700, fontSize:13, marginBottom:12, textTransform:'uppercase', letterSpacing:'0.05em' }}>📅 Activity Timeline</div>
@@ -169,7 +168,7 @@ export default function FarmerComplaints() {
                     </div>
                   )}
 
-                  {/* Admin Response */}
+                  
                   {c.adminResponse && (
                     <div className="alert alert-success" style={{ marginTop:16 }}>
                       <strong>👨‍💼 Admin Response:</strong><br/>
