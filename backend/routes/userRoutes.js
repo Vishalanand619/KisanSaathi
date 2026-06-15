@@ -1,4 +1,3 @@
-// KisanSaathi — User Routes
 const express = require('express');
 const router = express.Router();
 const { getAllUsers, getDashboardStats, getUserById, updateProfile, toggleUserStatus } = require('../controllers/userController');
