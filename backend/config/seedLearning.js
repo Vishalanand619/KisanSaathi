@@ -8,7 +8,7 @@ const resources = [
     description: 'Learn how to set up and maintain a drip irrigation system to save water and improve crop yield in arid regions.',
     category: 'Modern Farming',
     type: 'Video',
-    contentUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Dummy link
+    contentUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 
     thumbnailUrl: 'https://images.unsplash.com/photo-1590682680695-43b964a3ae17?q=80&w=600&auto=format&fit=crop'
   },
   {
@@ -16,7 +16,7 @@ const resources = [
     description: 'A comprehensive guide to identifying and controlling agricultural pests using environmentally friendly methods.',
     category: 'Pest Control',
     type: 'Article',
-    contentUrl: 'https://www.fao.org/pest-and-pesticide-management/ipm/en/', // Real link
+    contentUrl: 'https://www.fao.org/pest-and-pesticide-management/ipm/en/', 
     thumbnailUrl: 'https://images.unsplash.com/photo-1628189871790-272cb250a266?q=80&w=600&auto=format&fit=crop'
   },
   {
@@ -24,7 +24,7 @@ const resources = [
     description: 'An overview of agricultural drone technology for monitoring crop health, spraying fertilizers, and mapping land.',
     category: 'Technology',
     type: 'Video',
-    contentUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Dummy link
+    contentUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 
     thumbnailUrl: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=600&auto=format&fit=crop'
   },
   {
@@ -32,7 +32,7 @@ const resources = [
     description: 'Techniques for soil testing and selecting the right fertilizers to maximize crop production without degrading the soil.',
     category: 'Crop Management',
     type: 'Article',
-    contentUrl: 'https://soilhealthinstitute.org/', // Real link
+    contentUrl: 'https://soilhealthinstitute.org/', 
     thumbnailUrl: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=600&auto=format&fit=crop'
   },
   {
@@ -40,7 +40,7 @@ const resources = [
     description: 'Step-by-step introduction to transitioning from conventional to organic farming, including certification processes.',
     category: 'Modern Farming',
     type: 'Video',
-    contentUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Dummy link
+    contentUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 
     thumbnailUrl: 'https://images.unsplash.com/photo-1592982537447-6f29e1d88ee3?q=80&w=600&auto=format&fit=crop'
   }
 ];
