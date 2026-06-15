@@ -1,4 +1,3 @@
-// KisanSaathi — Farmer Schemes Page (Real Govt Schemes)
 import React, { useEffect, useState } from 'react';
 import api from '../../api/axios';
 import toast from 'react-hot-toast';
@@ -62,7 +61,7 @@ export default function FarmerSchemes() {
         </div>
       </div>
 
-      {/* Filters */}
+      
       <div className="filter-row">
         <input className="search-input" placeholder="🔍 Search schemes..." value={search}
           onChange={e => setSearch(e.target.value)} onKeyDown={e => e.key === 'Enter' && fetchAll()} />
@@ -80,7 +79,7 @@ export default function FarmerSchemes() {
             const isExpanded = expanded === s._id;
             return (
               <div key={s._id} className="card" style={{ borderLeft:`4px solid ${s.category==='Financial Aid'?'var(--success)':s.category==='Insurance'?'var(--info)':s.category==='Credit'?'var(--warning)':'var(--primary)'}` }}>
-                {/* Header */}
+             
                 <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', gap:12 }}>
                   <div style={{ flex:1 }}>
                     <div style={{ display:'flex', alignItems:'center', gap:10, flexWrap:'wrap', marginBottom:6 }}>
@@ -105,7 +104,7 @@ export default function FarmerSchemes() {
                   </div>
                 </div>
 
-                {/* Expandable Details */}
+                
                 {isExpanded && (
                   <div style={{ marginTop:18, paddingTop:18, borderTop:'1px solid var(--border)' }}>
                     <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(280px,1fr))', gap:16 }}>
@@ -145,7 +144,7 @@ export default function FarmerSchemes() {
         </div>
       )}
 
-      {/* Apply Modal */}
+      
       {modal && (
         <div style={M.overlay} onClick={() => setModal(null)}>
           <div style={M.box} onClick={e => e.stopPropagation()}>
