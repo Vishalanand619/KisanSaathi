@@ -1,4 +1,3 @@
-// KisanSaathi — Farmer Learning Page
 import React, { useEffect, useState } from 'react';
 import api from '../../api/axios';
 import toast from 'react-hot-toast';
@@ -44,7 +43,7 @@ export default function FarmerLearning() {
         </div>
       </div>
 
-      {/* Filters */}
+      
       <div className="filter-row">
         <input 
           className="search-input" 
