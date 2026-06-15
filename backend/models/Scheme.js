@@ -1,4 +1,3 @@
-// KisanSaathi - Government Scheme Model
 const mongoose = require('mongoose');
 
 const schemeSchema = new mongoose.Schema(
