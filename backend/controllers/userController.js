@@ -1,10 +1,8 @@
-// KisanSaathi — User Controller
 const asyncHandler = require('express-async-handler');
 const User = require('../models/User');
 const Complaint = require('../models/Complaint');
 const SchemeApplication = require('../models/SchemeApplication');
 
-// @route GET /api/users (admin — all farmers)
 const getAllUsers = asyncHandler(async (req, res) => {
   const { state, search } = req.query;
   const filter = { role: 'farmer' };
@@ -18,7 +16,6 @@ const getAllUsers = asyncHandler(async (req, res) => {
   res.json(users);
 });
 
-// @route GET /api/users/stats (admin dashboard)
 const getDashboardStats = asyncHandler(async (req, res) => {
   const [totalFarmers, activeFarmers, totalComplaints, openComplaints, totalApplications, pendingApplications] = await Promise.all([
     User.countDocuments({ role: 'farmer' }),
@@ -31,14 +28,13 @@ const getDashboardStats = asyncHandler(async (req, res) => {
   res.json({ totalFarmers, activeFarmers, totalComplaints, openComplaints, totalApplications, pendingApplications });
 });
 
-// @route GET /api/users/:id (admin)
 const getUserById = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id).select('-password');
   if (!user) { res.status(404); throw new Error('User not found'); }
   res.json(user);
 });
 
-// @route PUT /api/users/profile (private — own profile)
+
 const updateProfile = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user._id);
   if (!user) { res.status(404); throw new Error('User not found'); }
@@ -48,7 +44,6 @@ const updateProfile = asyncHandler(async (req, res) => {
   res.json(updated);
 });
 
-// @route PUT /api/users/:id/toggle (admin)
 const toggleUserStatus = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id);
   if (!user) { res.status(404); throw new Error('User not found'); }
