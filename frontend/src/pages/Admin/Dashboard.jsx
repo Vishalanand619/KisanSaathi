@@ -1,4 +1,3 @@
-// KisanSaathi — Admin Dashboard with Recharts
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from 'recharts';
@@ -55,7 +54,6 @@ export default function AdminDashboard() {
         </div>
       </div>
 
-      {/* Stats */}
       <div className="grid-4" style={{ marginBottom:28 }}>
         {[
           { label:'Total Farmers', value:stats?.totalFarmers||0, icon:'👨‍🌾', color:'var(--primary)', to:'/admin/users' },
@@ -77,7 +75,7 @@ export default function AdminDashboard() {
         ))}
       </div>
 
-      {/* Charts Row */}
+      
       <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:20, marginBottom:24 }}>
         <div className="card">
           <h4 style={{ fontWeight:700, color:'var(--primary-dark)', marginBottom:16 }}>🗂️ Complaint Status</h4>
@@ -116,9 +114,9 @@ export default function AdminDashboard() {
         </div>
       </div>
 
-      {/* Recent Activity */}
+      
       <div className="grid-2">
-        {/* Recent Complaints */}
+      
         <div className="card">
           <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:16 }}>
             <h3 style={{ fontSize:16, fontWeight:700, color:'var(--primary-dark)' }}>🗂️ Recent Complaints</h3>
@@ -137,7 +135,7 @@ export default function AdminDashboard() {
           {complaints.length===0 && <div style={{ textAlign:'center', color:'var(--text-muted)', padding:'20px 0' }}>No complaints</div>}
         </div>
 
-        {/* Recent Applications */}
+        
         <div className="card">
           <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:16 }}>
             <h3 style={{ fontSize:16, fontWeight:700, color:'var(--primary-dark)' }}>📩 Recent Applications</h3>
@@ -156,7 +154,7 @@ export default function AdminDashboard() {
         </div>
       </div>
 
-      {/* Quick Actions */}
+      
       <div className="card" style={{ marginTop:20 }}>
         <h3 style={{ fontWeight:700, color:'var(--primary-dark)', marginBottom:16, fontSize:15 }}>⚡ Quick Actions</h3>
         <div className="grid-4">
