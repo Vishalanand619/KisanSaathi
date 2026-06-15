@@ -1,10 +1,6 @@
-// KisanSaathi — Weather Controller
-// Uses Open-Meteo (100% free, no API key needed)
-// Docs: https://open-meteo.com/en/docs
 const asyncHandler = require('express-async-handler');
 const axios = require('axios');
 
-// State capital coordinates for fallback
 const STATE_COORDS = {
   'Madhya Pradesh': { lat: 23.2599, lon: 77.4126, city: 'Bhopal' },
   'Uttar Pradesh': { lat: 26.8467, lon: 80.9462, city: 'Lucknow' },
@@ -40,11 +36,11 @@ const getWeatherEmoji = (code) => {
   return '🌤️';
 };
 
-// @route GET /api/weather?state=Madhya+Pradesh&lat=23.25&lon=77.41
+
 const getWeather = asyncHandler(async (req, res) => {
   let { lat, lon, state } = req.query;
 
-  // Use state coords if lat/lon not provided
+  
   if (!lat || !lon) {
     const coords = STATE_COORDS[state] || STATE_COORDS['Madhya Pradesh'];
     lat = coords.lat;
@@ -86,7 +82,7 @@ const getWeather = asyncHandler(async (req, res) => {
         condition: WMO_CODES[daily.weather_code[i]] || 'Unknown',
         emoji: getWeatherEmoji(daily.weather_code[i]),
       })),
-      // Farm advisory based on weather
+      
       advisory: generateFarmAdvisory(cur.weather_code, cur.temperature_2m, daily.precipitation_sum),
     });
   } catch (err) {
