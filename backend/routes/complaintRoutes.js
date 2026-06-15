@@ -1,4 +1,3 @@
-// KisanSaathi — Complaint Routes
 const express = require('express');
 const router = express.Router();
 const { createComplaint, getMyComplaints, getComplaintById, getAllComplaints, respondToComplaint, getComplaintStats } = require('../controllers/complaintController');
