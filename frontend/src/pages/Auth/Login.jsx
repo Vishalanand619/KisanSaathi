@@ -1,4 +1,3 @@
-// KisanSaathi — Login Page
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
@@ -27,7 +26,6 @@ export default function Login() {
 
   return (
     <div style={S.page}>
-      {/* Left Hero */}
       <div style={S.hero}>
         <div style={S.heroInner}>
           <div style={{ fontSize: 72, marginBottom: 12 }}>🌾</div>
@@ -42,7 +40,7 @@ export default function Login() {
         </div>
       </div>
 
-      {/* Right Form */}
+      
       <div style={S.formSide}>
         <div style={S.formCard}>
           <h2 style={S.formTitle}>Welcome Back</h2>
@@ -64,7 +62,7 @@ export default function Login() {
             </button>
           </form>
 
-          {/* Demo Credentials */}
+          
           <div style={S.demoBox}>
             <div style={{ fontWeight: 700, marginBottom: 10, fontSize: 13 }}>🧪 Demo Credentials</div>
             <div style={{ display: 'flex', gap: 8 }}>
