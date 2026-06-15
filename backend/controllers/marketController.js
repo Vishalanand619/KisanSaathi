@@ -1,8 +1,7 @@
-// KisanSaathi - Market Price Controller
 const asyncHandler = require('express-async-handler');
 const MarketPrice = require('../models/MarketPrice');
 
-// @desc    Get all market prices
+
 const getMarketPrices = asyncHandler(async (req, res) => {
   const { state, crop } = req.query;
 
@@ -14,13 +13,13 @@ const getMarketPrices = asyncHandler(async (req, res) => {
   res.json(prices);
 });
 
-// @desc    Get all states (for dropdown)
+
 const getStates = asyncHandler(async (req, res) => {
   const states = await MarketPrice.distinct('state');
   res.json(states);
 });
 
-// @desc    Get all crops (for dropdown)
+
 const getCrops = asyncHandler(async (req, res) => {
   const crops = await MarketPrice.distinct('crop');
   res.json(crops);
@@ -70,7 +69,7 @@ const triggerSync = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc    Add/Update market price (admin)
+
 const addMarketPrice = asyncHandler(async (req, res) => {
   const { crop, market, state } = req.body;
 
@@ -93,18 +92,18 @@ const addMarketPrice = asyncHandler(async (req, res) => {
   res.status(201).json(price);
 });
 
-// @desc    Delete market price
+
 const deleteMarketPrice = asyncHandler(async (req, res) => {
   await MarketPrice.findByIdAndDelete(req.params.id);
   res.json({ message: 'Market price entry removed' });
 });
 
-// ✅ FINAL EXPORT (IMPORTANT)
+
 module.exports = {
   getMarketPrices,
-  getStates,       // 🔥 added
-  getCrops,        // 🔥 added
-  triggerSync,     // 🔥 added
+  getStates,      
+  getCrops,        
+  triggerSync,     
   addMarketPrice,
   deleteMarketPrice
 };
