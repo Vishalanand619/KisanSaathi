@@ -1,4 +1,3 @@
-// KisanSaathi - Scheme Application Model
 const mongoose = require('mongoose');
 
 const schemeApplicationSchema = new mongoose.Schema(
@@ -12,12 +11,12 @@ const schemeApplicationSchema = new mongoose.Schema(
     },
     message: { type: String },
     adminRemarks: { type: String },
-    documents: [{ type: String }], // file paths or URLs
+    documents: [{ type: String }], 
   },
   { timestamps: true }
 );
 
-// Prevent duplicate applications
+
 schemeApplicationSchema.index({ scheme: 1, farmer: 1 }, { unique: true });
 
 module.exports = mongoose.model('SchemeApplication', schemeApplicationSchema);
