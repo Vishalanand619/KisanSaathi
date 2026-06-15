@@ -1,4 +1,3 @@
-// KisanSaathi — Farmer Market Prices (Live Agmarknet data)
 import React, { useEffect, useState } from 'react';
 import api from '../../api/axios';
 import toast from 'react-hot-toast';
@@ -34,7 +33,7 @@ export default function FarmerMarket() {
     ? prices.filter(p => p.crop.toLowerCase().includes(filters.search.toLowerCase()) || p.market.toLowerCase().includes(filters.search.toLowerCase()))
     : prices;
 
-  // Group by state for display
+  
   const byState = filtered.reduce((acc, p) => {
     if (!acc[p.state]) acc[p.state] = [];
     acc[p.state].push(p);
@@ -52,7 +51,6 @@ export default function FarmerMarket() {
 
 
 
-      {/* Filters */}
       <div className="filter-row">
         <input className="search-input" placeholder="🔍 Search crop or mandi..."
           value={filters.search} onChange={e => setFilters({ ...filters, search: e.target.value })} />
@@ -64,7 +62,7 @@ export default function FarmerMarket() {
         <button className="btn btn-outline btn-sm" onClick={fetchPrices}>🔄 Refresh</button>
       </div>
 
-      {/* Top Movers */}
+      
       {!loading && filtered.length > 0 && (
         <div style={{ marginBottom:24 }}>
           <h3 style={{ fontSize:15, fontWeight:700, color:'var(--primary-dark)', marginBottom:12 }}>⭐ Featured Prices Today</h3>
@@ -89,16 +87,16 @@ export default function FarmerMarket() {
         </div>
       )}
 
-      {/* Full Table grouped by state */}
+      
       {loading ? <div className="spinner-wrap"><div className="spinner"/></div> : filtered.length === 0 ? (
         <div className="empty-state"><div className="empty-icon">💹</div><p>No price data found</p></div>
       ) : filters.state ? (
-        // Single state flat table
+
         <div className="card">
           <PriceTable rows={filtered} />
         </div>
       ) : (
-        // All states — grouped
+     
         Object.entries(byState).map(([state, rows]) => (
           <div key={state} className="card" style={{ marginBottom:16 }}>
             <h4 style={{ fontWeight:700, color:'var(--primary-dark)', marginBottom:14, fontSize:15 }}>📍 {state} <span style={{ color:'var(--text-muted)', fontWeight:400, fontSize:13 }}>({rows.length} prices)</span></h4>
