@@ -1,4 +1,3 @@
-// KisanSaathi - MongoDB Connection Config
 const mongoose = require('mongoose');
 
 const connectDB = async () => {
