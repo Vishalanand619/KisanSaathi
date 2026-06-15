@@ -1,4 +1,3 @@
-// KisanSaathi — Farmer Profile Page
 import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import api from '../../api/axios';
@@ -49,7 +48,7 @@ export default function FarmerProfile() {
       </div>
 
       <div style={{ display:'grid', gridTemplateColumns:'1fr 2fr', gap:24, alignItems:'start' }}>
-        {/* Left — Profile Card */}
+        
         <div className="card" style={{ textAlign:'center' }}>
           <div style={{ width:80, height:80, borderRadius:'50%', background:'var(--primary)', color:'#fff', display:'flex', alignItems:'center', justifyContent:'center', fontSize:36, fontWeight:800, margin:'0 auto 14px' }}>
             {user?.name?.[0]?.toUpperCase()}
@@ -69,7 +68,7 @@ export default function FarmerProfile() {
           </div>
         </div>
 
-        {/* Right — Edit form or Tips */}
+       
         {editing ? (
           <div className="card">
             <h3 style={{ fontWeight:700, color:'var(--primary-dark)', marginBottom:20 }}>✏️ Edit Your Details</h3>
@@ -119,7 +118,7 @@ export default function FarmerProfile() {
           </div>
         ) : (
           <div style={{ display:'flex', flexDirection:'column', gap:20 }}>
-            {/* KisanSaathi Tips */}
+          
             <div className="card" style={{ background:'linear-gradient(135deg, #1b4332, #2d6a2f)', color:'#fff' }}>
               <h3 style={{ marginBottom:16, fontSize:17 }}>🌾 KisanSaathi Tips for You</h3>
               {[
@@ -136,7 +135,7 @@ export default function FarmerProfile() {
               ))}
             </div>
 
-            {/* Scheme Helplines */}
+            
             <div className="card">
               <h3 style={{ fontWeight:700, color:'var(--primary-dark)', marginBottom:14, fontSize:15 }}>📞 Important Helplines</h3>
               {[
