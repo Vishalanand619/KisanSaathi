@@ -1,4 +1,3 @@
-// KisanSaathi — Admin Complaints Management
 import React, { useEffect, useState } from 'react';
 import api from '../../api/axios';
 import toast from 'react-hot-toast';
@@ -108,7 +107,6 @@ export default function AdminComplaints() {
               <div style={{ background:'#f5f5f5', padding:'12px 16px', borderRadius:8, fontSize:14, lineHeight:1.7 }}>{selected.description}</div>
             </div>
 
-            {/* Timeline */}
             {selected.timeline?.length > 0 && (
               <div style={{ marginBottom:16 }}>
                 <div style={{ fontWeight:700, fontSize:13, marginBottom:10 }}>📅 Timeline</div>
