@@ -83,7 +83,7 @@ const schemes = [
     description: 'A pan-India electronic trading portal which networks the existing APMC mandis to create a unified national market for agricultural commodities.',
     eligibility: 'Farmers, Traders, and FPOs registered with APMC mandis.',
     benefits: 'Transparent online trading, better price discovery, and direct payment to bank accounts.',
-    category: 'Training', // Or 'Other'
+    category: 'Training',
     ministry: 'Ministry of Agriculture & Farmers Welfare',
     schemeCode: 'ENAM-007',
     documents: ['Aadhaar Card', 'Bank account details', 'Mobile Number'],
