@@ -1,4 +1,3 @@
-// KisanSaathi — Auth Context
 import React, { createContext, useContext, useState } from 'react';
 import api from '../api/axios';
 
