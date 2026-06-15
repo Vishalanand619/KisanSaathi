@@ -2,14 +2,13 @@ const axios = require('axios');
 
 async function test() {
   try {
-    // 1. Get schemes
+    
     console.log('Fetching schemes...');
     const schemesRes = await axios.get('http://localhost:5000/api/schemes');
     console.log('Schemes:', schemesRes.status);
 
-    // 2. We need a token. Let's just login if we can, or bypass.
-    // What is a valid user? Let's just create one or login with seed data if any.
-    // I didn't see users in seed.js. Let's register a temporary user.
+
+    
     console.log('Registering test admin...');
     const registerRes = await axios.post('http://localhost:5000/api/auth/register', {
       name: 'Test Admin',
