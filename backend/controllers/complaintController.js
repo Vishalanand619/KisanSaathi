@@ -1,12 +1,9 @@
-// KisanSaathi - Complaint Controller
 const asyncHandler = require('express-async-handler');
 const Complaint = require('../models/Complaint');
 
-// @desc    Create complaint (farmer)
-// @route   POST /api/complaints
-// @access  Farmer
+
 const createComplaint = asyncHandler(async (req, res) => {
-  // Generate random 6 character alphanumeric ticket ID
+  
   const ticketId = 'TKT-' + Math.random().toString(36).substring(2, 8).toUpperCase();
   
   const complaint = await Complaint.create({
@@ -25,9 +22,7 @@ const createComplaint = asyncHandler(async (req, res) => {
   res.status(201).json(complaint);
 });
 
-// @desc    Get my complaints (farmer)
-// @route   GET /api/complaints/mine
-// @access  Farmer
+
 const getMyComplaints = asyncHandler(async (req, res) => {
   const complaints = await Complaint.find({ farmer: req.user._id })
     .sort({ createdAt: -1 });
@@ -35,9 +30,7 @@ const getMyComplaints = asyncHandler(async (req, res) => {
   res.json(complaints);
 });
 
-// @desc    Get all complaints (admin)
-// @route   GET /api/complaints
-// @access  Admin
+
 const getAllComplaints = asyncHandler(async (req, res) => {
   const { status } = req.query;
 
@@ -51,9 +44,7 @@ const getAllComplaints = asyncHandler(async (req, res) => {
   res.json(complaints);
 });
 
-// @desc    Get single complaint by ID
-// @route   GET /api/complaints/:id
-// @access  Protected
+
 const getComplaintById = asyncHandler(async (req, res) => {
   const complaint = await Complaint.findById(req.params.id)
     .populate('farmer', 'name email phone state');
@@ -66,9 +57,7 @@ const getComplaintById = asyncHandler(async (req, res) => {
   res.json(complaint);
 });
 
-// @desc    Respond to complaint (admin)
-// @route   PUT /api/complaints/:id
-// @access  Admin
+
 const respondToComplaint = asyncHandler(async (req, res) => {
   const { status, adminResponse } = req.body;
 
@@ -107,9 +96,7 @@ const respondToComplaint = asyncHandler(async (req, res) => {
   res.json(complaint);
 });
 
-// @desc    Get complaint stats (admin)
-// @route   GET /api/complaints/stats
-// @access  Admin
+
 const getComplaintStats = asyncHandler(async (req, res) => {
   const stats = await Complaint.aggregate([
     { $group: { _id: '$status', count: { $sum: 1 } } },
@@ -118,12 +105,11 @@ const getComplaintStats = asyncHandler(async (req, res) => {
   res.json(stats);
 });
 
-// ✅ FINAL EXPORT
 module.exports = {
   createComplaint,
   getMyComplaints,
   getAllComplaints,
-  getComplaintById,   // 🔥 FIXED (missing tha)
+  getComplaintById,   
   respondToComplaint,
   getComplaintStats
 };
