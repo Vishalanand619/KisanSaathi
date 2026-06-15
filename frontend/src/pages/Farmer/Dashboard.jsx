@@ -1,4 +1,3 @@
-// KisanSaathi — Farmer Dashboard (Weather + Real Data)
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
@@ -88,7 +87,7 @@ export default function FarmerDashboard() {
 
   return (
     <div>
-      {/* Welcome Banner */}
+  
       <div style={S.banner}>
         <div>
           <h1 style={S.bannerTitle}>नमस्ते, {user?.name?.split(' ')[0]}! 🙏</h1>
@@ -102,7 +101,7 @@ export default function FarmerDashboard() {
         <div style={{ fontSize:88, opacity:0.35 }}>🌾</div>
       </div>
 
-      {/* Stats */}
+     
       <div className="grid-4" style={{ marginBottom:24 }}>
         {[
           { label:'Active Schemes', value:data.schemes.length, icon:'📋', color:'var(--primary)' },
@@ -118,7 +117,7 @@ export default function FarmerDashboard() {
         ))}
       </div>
 
-      {/* Weather + Quick Actions */}
+      
       <div style={{ display:'grid', gridTemplateColumns:'1fr 300px', gap:20, marginBottom:24 }}>
         <WeatherCard state={user?.state} />
         <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
@@ -137,9 +136,9 @@ export default function FarmerDashboard() {
         </div>
       </div>
 
-      {/* Schemes + Market side by side */}
+      
       <div className="grid-2">
-        {/* Latest Schemes */}
+    
         <div className="card">
           <div style={S.secHead}>
             <h3 style={S.secTitle}>📋 Latest Government Schemes</h3>
@@ -158,7 +157,7 @@ export default function FarmerDashboard() {
           {data.schemes.length === 0 && <div className="empty-state" style={{ padding:'30px 0' }}><p>No schemes available</p></div>}
         </div>
 
-        {/* Market Prices */}
+       
         <div className="card">
           <div style={S.secHead}>
             <h3 style={S.secTitle}>💹 Live Mandi Prices</h3>
@@ -182,7 +181,7 @@ export default function FarmerDashboard() {
         </div>
       </div>
 
-      {/* My Applications */}
+      
       {data.applications.length > 0 && (
         <div className="card" style={{ marginTop:24 }}>
           <div style={S.secHead}>
